@@ -1,4 +1,4 @@
-const mergeTwoLists = function (list1, list2) {
+const mergeTwoLists =  (list1, list2) {
 	// RETURN OPPOSITE LIST IF ONE IS NULL
 	if (!list1 || !list2) {
 		return list2 || list1;
