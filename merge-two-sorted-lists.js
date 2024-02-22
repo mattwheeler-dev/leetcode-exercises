@@ -1,4 +1,4 @@
-const mergeTwoLists =  (list1, list2) {
+const mergeTwoLists =  (list1, list2) => {
 	if (!list1 || !list2) {
 		return list2 || list1;
 	}
