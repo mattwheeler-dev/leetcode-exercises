@@ -1,3 +1,4 @@
+// STORE ROMAN VALUES IN OBJECT
 const romans = {
 	I: 1,
 	V: 5,
@@ -7,14 +8,22 @@ const romans = {
 	D: 500,
 	M: 1000,
 };
+
 const romanToInt = (n) => {
-	let value = 0;
+	// STORE TOTAL
+	let total = 0;
+	// LOOP THRU GIVEN ROMAN
 	for (i = 0; i < n.length; i++) {
+		// IF CURRENT ROMAN IS LESS THAN THE NEXT, SUBTRACT IT
 		if (romans[n[i]] < romans[n[i + 1]]) {
 			value -= romans[n[i]];
-		} else {
+		} 
+		// ELSE ADD TO TOTAL
+		else {
 			value += romans[n[i]];
 		}
 	}
-	return value;
+
+	// RETURN TOTAL AFTER LOOP IS COMPLETE
+	return total;
 };
