@@ -4,7 +4,9 @@ const removeDuplicates = (nums) => {
 
     // LOOP THRU ARRAY, COMPARE VALS, REPLACE WITH UNIQUE VALS
     nums.forEach((num) => {
-        num > nums[k] && (nums[++k] = num)
+        if (nums[k] !== num) {
+            nums[++k] = num;
+        };
     });
 
     // RETURN AMT OF UNIQUE VALS
