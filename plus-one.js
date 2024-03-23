@@ -4,19 +4,19 @@ const plusOne = (digits) => {
         // ADD 1 TO CURRENT DIGIT
         digits[i] += 1;
     
-        // IF CURRENT DIGIT BECOMES 10, REPLACE WITH 0
+        // IF CURRENT DIGIT BECOMES 10, REPLACE WITH 0 (CARRY THE 1)
         if(digits[i] > 9) {
             digits[i] = 0;
         } 
-        // ELSE RETURN CURRENT DIGIT
+        // ELSE RETURN DIGITS
         else {
             return digits;
         };
     };
     
-    // INSERT 1 TO BEGINNING OF DIGITS
+    // INSERT THE CARRIED 1 TO BEGINNING OF DIGITS
     digits.unshift(1);
     
-    // RETURN NEW DIGITS
+    // RETURN DIGITS AFTER CARRIED 1 IS ADDED
     return digits;
 };
