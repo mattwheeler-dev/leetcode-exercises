@@ -16,11 +16,11 @@ const romanToInt = (n) => {
 	for (i = 0; i < n.length; i++) {
 		// IF CURRENT ROMAN IS LESS THAN THE NEXT, SUBTRACT IT
 		if (romans[n[i]] < romans[n[i + 1]]) {
-			value -= romans[n[i]];
+			total -= romans[n[i]];
 		} 
 		// ELSE ADD TO TOTAL
 		else {
-			value += romans[n[i]];
+			total += romans[n[i]];
 		}
 	}
 
