@@ -1,23 +1,15 @@
-const isValid = (parens) => {
-	// STORE CLOSING PARENS IN ARRAY
-	let closers = [];
-	
-	// LOOP THRU GIVEN PARENS
-	for (let i = 0; i < parens.length; i++) {
-		// DETERMINE PAREN TYPE & PUSH CLOSED VERSION TO ARRAY
-		if (parens[i] == "{") {
-			closers.push("}");
-		} else if (parens[i] == "[") {
-			closers.push("]");
-		} else if (parens[i] == "(") {
-			closers.push(")");
-		} 
-		// IF CLOSING PAREN, COMPARE TO CLOSERS ARRAY TO CHECK FOR CORRECT ORDER / AMOUNT
-		else if (closers.pop() !== parens[i]) {
-			return false;
-		}
-	};
-	
-	// RETURN IF CLOSERS ARRAY EXISTS, IT SHOULD NOT IF INPUT WAS VALID
-	return !closers.length;
+const isValid = (s) => {
+    let closers = [];
+    for (let i = 0; i < s.length; i++) {
+        if (s[i] == "(") {
+            closers.push(")");
+        } else if (s[i] == "{") {
+            closers.push("}");
+        } else if (s[i] == "[") {
+            closers.push("]");
+        } else if (closers.pop() !== s[i]) {
+            return false;
+        }
+    };
+    return !closers.length;
 };
