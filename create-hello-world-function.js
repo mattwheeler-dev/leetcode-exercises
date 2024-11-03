@@ -1,5 +1,5 @@
 const createHelloWorld = () => {
-    return function(...args) {
+    return (...args) => {
         return "Hello World"
     }
 };
