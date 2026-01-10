@@ -1,10 +1,10 @@
 const strStr = (haystack, needle) => {
-    // SEARCH FOR NEEDLE
+    // Check for needle in haystack
     if (haystack.includes(needle)) {
-        // IF NEEDLE FOUND, RETURN INDEX
+        // If needle found, return index
         return haystack.indexOf(needle);
     } else {
-        // NEEDLE NOT FOUND, RETURN -1
+        // Needle not found, return -1
         return -1;
     };
 };
