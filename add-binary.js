@@ -1,38 +1,29 @@
 const addBinary = (a, b) => {
-    // STORE POSSIBLE CARRY (0 / 1)
+    // Store possible carry value (0/1)
     let carry = 0;
-    // STORE AND CREATE RESULT TO RETURN
+    // Store and build result
     let result = "";
-    // STORE LENGTH FOR LOOP; INIT AS A.LENGTH
+    // Store max length for leading 0s, init with a.length
     let maxLength = a.length;
-
-    // IF A IS LONGER, ADD LEADING 0S TO B
+    // Find which length is greater, then add leading 0s to shorter string
     if (a.length > b.length){
         b = "0".repeat(a.length - b.length) + b;
-    } 
-    // ELSE MAXLENGTH IS B.LENGTH, AND ADD LEADING 0S TO A
-    else {
+    } else {
         maxLength = b.length;
         a = "0".repeat(b.length - a.length) + a;
     };
-
-    // LOOP THRU STRINGS
+    // Loop through strings, starting at the end
     for (let i = maxLength - 1; i >= 0; i--){
-        // PARSE TO INTS, ADD THEM, ADD CARRY, STORE IN VARIABLE
+        // Parse to ints, add them, add carry
         let sum = parseInt(a[i]) + parseInt(b[i]) + carry;
-        
-        // ADD NEW BINARY TO RESULT 
+        // Add new value to result
         result = (sum % 2) + result;
-
-        // DECIDE IF CARRY IS 1 OR 0
+        // Find if carry is 1 or 0
         carry = sum >= 2 ? 1 : 0;
     };
-
-    // IF CARRY IS TRUE (1), ADD LEADING 1
+    // If carry is true (1), add leading 1
     if (carry){
         result = "1" + result;
     };
-
-    // RETURN RESULTING STRING
     return result;
 };
