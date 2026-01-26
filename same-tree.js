@@ -1,16 +1,15 @@
 const isSameTree = (p, q) => {
-  // CHECK IF P & Q ARE PRESENT / UNDEFINED
+  // Check if p & q are present / undefined
     if (!p || !q) {
-      // RETURN TRUE IF SAME, FALSE IF NOT
+      // Return true if same, false if not
         return p === q;
-    }
-
-  // RECURSIVELY CHECK VALS, LEFTS, & RIGHTS
+    };
+  // Recursively check vals, lefts, & rights
     if (p.val === q.val && isSameTree(p.left,q.left) && isSameTree(p.right,q.right)) {
-      // TRUE IF ALL CHECKED AND SAME
+      // Return true if all checked and same
         return true;
     } else {
-      // FALSE IF DIFFERENCE FOUND
+      // If difference found, return false
         return false;
-    }
+    };
 };
